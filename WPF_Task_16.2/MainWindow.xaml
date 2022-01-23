@@ -1,0 +1,41 @@
+﻿<Window x:Class="WPF_Task_16._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Task_16._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="450">
+    <Canvas Height="400">
+        <Ellipse Height="20"
+                 Width="20"
+                 Stroke="Black"
+                 Fill="Red"
+                 Canvas.Left="215"
+                 Canvas.Top="0">
+            <Ellipse.Triggers>
+                <EventTrigger RoutedEvent="Window.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimationUsingPath Storyboard.TargetProperty="(Canvas.Top)"
+                                                      Duration="0:0:2"
+                                                      AutoReverse="True"
+                                                      AccelerationRatio="1"
+                                                      RepeatBehavior="Forever"
+                                                      Source="Y">
+                                <DoubleAnimationUsingPath.PathGeometry>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="215, 0">
+                                            <LineSegment Point="215,380"/>
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </DoubleAnimationUsingPath.PathGeometry>
+                            </DoubleAnimationUsingPath>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Ellipse.Triggers>
+        </Ellipse>
+        <Line X1="0" Y1="400" X2="450" Y2="400" Stroke="Black" StrokeThickness="2"/>
+    </Canvas>
+</Window>
