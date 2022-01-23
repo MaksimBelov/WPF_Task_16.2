@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:WPF_Task_16._2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="450">
+    
     <Canvas Height="400">
         <Ellipse Height="20"
                  Width="20"
